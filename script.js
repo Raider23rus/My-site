@@ -1,3 +1,4 @@
+// script.js
 document.addEventListener('DOMContentLoaded', function() {
     // Мобильное меню
     const menuToggle = document.getElementById('menuToggle');
@@ -9,70 +10,38 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Копирование IP-адреса
     window.copyIP = function() {
-        const ip = 'play.minelord.ru';
+        const ip = 'play.mcrealm.ru';
         navigator.clipboard.writeText(ip)
             .then(() => {
                 const serverIpElement = document.querySelector('.server-ip');
-                const originalText = serverIpElement.innerText;
-                serverIpElement.innerText = 'Скопировано!';
+                const originalHtml = serverIpElement.innerHTML;
+                serverIpElement.innerHTML = '<i class="fas fa-check"></i> Скопировано!';
                 
                 setTimeout(() => {
-                    serverIpElement.innerText = originalText;
+                    serverIpElement.innerHTML = originalHtml;
                 }, 2000);
             })
             .catch(err => {
                 console.error('Ошибка копирования: ', err);
-                alert('Не удалось скопировать IP. Скопируйте вручную: play.minelord.ru');
+                alert('Не удалось скопировать IP. Скопируйте вручную: play.mcrealm.ru');
             });
     };
     
-    // Анимация карточек
-    const cards = document.querySelectorAll('.feature-card, .privilege-card');
-    
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            card.style.boxShadow = '0 10px 25px rgba(76, 175, 80, 0.3)';
-        });
+    // Функция для обновления онлайн-статуса
+    function updateOnlineStatus() {
+        // Здесь будет запрос к API сервера
+        // Для демонстрации используем случайные значения
+        const onlineCount = Math.floor(Math.random() * 60) + 140; // 140-200
+        const onlineElement = document.getElementById('online-count');
+        const serverOnline = document.getElementById('server-online');
         
-        card.addEventListener('mouseleave', () => {
-            card.style.boxShadow = 'none';
-        });
-    });
-    
-    // Изменение цвета заголовка
-    const titles = document.querySelectorAll('h1, h2, h3');
-    
-    if (titles.length > 0) {
-        setInterval(() => {
-            titles.forEach(title => {
-                const hue = Math.floor(Math.random() * 60) + 80; // Зеленые оттенки
-                title.style.textShadow = `2px 2px 0 hsl(${hue}, 70%, 30%)`;
-            });
-        }, 2000);
+        onlineElement.textContent = onlineCount;
+        serverOnline.textContent = onlineCount;
     }
     
-    // Плавная прокрутка для якорных ссылок
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-                
-                // Закрываем мобильное меню после клика
-                if (navMenu.classList.contains('active')) {
-                    navMenu.classList.remove('active');
-                }
-            }
-        });
-    });
+    // Имитация получения данных с сервера
+    updateOnlineStatus();
+    setInterval(updateOnlineStatus, 30000); // Обновление каждые 30 секунд
     
     // Обработка кнопок покупки
     const buyButtons = document.querySelectorAll('.privilege-card .btn');
@@ -86,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Анимация при скролле
     const animateOnScroll = () => {
-        const elements = document.querySelectorAll('.feature-card, .privilege-card, .rules');
+        const elements = document.querySelectorAll('.feature-card, .privilege-card, .rules, .stat-card');
         
         elements.forEach(element => {
             const elementPosition = element.getBoundingClientRect().top;
@@ -99,11 +68,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
     
-    // Инициализация анимации
-    window.addEventListener('scroll', animateOnScroll);
-    
     // Установка начальных значений для анимации
-    const animatedElements = document.querySelectorAll('.feature-card, .privilege-card, .rules');
+    const animatedElements = document.querySelectorAll('.feature-card, .privilege-card, .rules, .stat-card');
     animatedElements.forEach(element => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(20px)';
@@ -112,4 +78,28 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Инициализация при загрузке
     animateOnScroll();
+    window.addEventListener('scroll', animateOnScroll);
+    
+    // Плавная прокрутка для якорных ссылок
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            if (this.getAttribute('href') === '#') return;
+            
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Закрываем мобильное меню после клика
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                }
+            }
+        });
+    });
 });
