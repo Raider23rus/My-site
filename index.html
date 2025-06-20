@@ -3,21 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MineLord - Лучший Minecraft сервер</title>
+    <title>MineCraft Realm - Лучший Minecraft сервер</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Шапка -->
+    <!-- Header -->
     <header>
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <img src="https://minelord.ru/images/logo.png" alt="MineLord Logo">
-                    <h1>MineLord</h1>
+                    <img src="https://i.imgur.com/rXG7nQc.png" alt="MineCraft Realm Logo">
+                    <h1>MineCraft Realm</h1>
                 </div>
                 
-                <div class="server-ip" onclick="copyIP()">play.minelord.ru</div>
+                <div class="server-info">
+                    <div class="server-ip" onclick="copyIP()">
+                        <i class="fas fa-copy"></i> play.mcrealm.ru
+                    </div>
+                    <div class="online">
+                        <div class="online-dot"></div>
+                        <span id="online-count">142</span>/200
+                    </div>
+                </div>
                 
                 <div class="menu-toggle" id="menuToggle">
                     <div class="bar"></div>
@@ -27,59 +35,101 @@
                 
                 <nav>
                     <ul id="navMenu">
-                        <li><a href="#" class="active">Главная</a></li>
-                        <li><a href="#">Форум</a></li>
-                        <li><a href="#donate">Донат</a></li>
-                        <li><a href="#">Магазин</a></li>
-                        <li><a href="#">Статистика</a></li>
-                        <li><a href="#">Помощь</a></li>
+                        <li><a href="#" class="active"><i class="fas fa-home"></i> Главная</a></li>
+                        <li><a href="#"><i class="fas fa-users"></i> Форум</a></li>
+                        <li><a href="#donate"><i class="fas fa-crown"></i> Донат</a></li>
+                        <li><a href="#"><i class="fas fa-store"></i> Магазин</a></li>
+                        <li><a href="#"><i class="fas fa-question-circle"></i> Помощь</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
     
-    <!-- Основной контент -->
-    <main class="container">
-        <!-- Герой-секция -->
-        <section class="hero">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
             <div class="hero-content">
                 <h2>ЛУЧШИЙ MINECRAFT СЕРВЕР</h2>
-                <p>Присоединяйся к увлекательному миру приключений, выживания и креатива. Уникальные моды, экономика, PvP и дружелюбное комьюнити ждут тебя!</p>
-                <a href="#" class="btn">Играть сейчас</a>
-                <a href="#donate" class="btn btn-outline">Купить привилегию</a>
+                <p>Присоединяйтесь к увлекательному миру приключений, выживания и креатива. Уникальные моды, экономика, PvP и дружелюбное комьюнити ждут вас!</p>
+                <a href="#" class="btn"><i class="fas fa-play"></i> Играть сейчас</a>
+                <a href="#donate" class="btn btn-outline"><i class="fas fa-gem"></i> Купить привилегию</a>
             </div>
-        </section>
-        
-        <!-- Особенности сервера -->
-        <section class="features">
+        </div>
+    </section>
+    
+    <!-- Features -->
+    <section class="container">
+        <div class="features">
             <div class="feature-card">
-                <img src="https://minelord.ru/icons/survival.png" alt="Выживание">
-                <h3>Классическое выживание</h3>
-                <p>Настоящий майнкрафт-опыт с экономикой, аукционами и защитой территории</p>
+                <i class="fas fa-dungeon"></i>
+                <h3>Уникальные Рейды</h3>
+                <p>Еженедельные рейды с уникальными боссами и редкими наградами</p>
             </div>
             
             <div class="feature-card">
-                <img src="https://minelord.ru/icons/modded.png" alt="Моды">
-                <h3>Уникальные модификации</h3>
-                <p>Эксклюзивные плагины и моды, созданные специально для нашего сервера</p>
+                <i class="fas fa-shield-alt"></i>
+                <h3>Защита территории</h3>
+                <p>Надежная система защиты ваших построек и ресурсов</p>
             </div>
             
             <div class="feature-card">
-                <img src="https://minelord.ru/icons/community.png" alt="Сообщество">
-                <h3>Активное сообщество</h3>
-                <p>Более 1000 игроков ежедневно, ивенты и конкурсы каждую неделю</p>
+                <i class="fas fa-coins"></i>
+                <h3>Экономика</h3>
+                <p>Реалистичная экономика с аукционами и магазинами</p>
             </div>
-        </section>
-        
-        <!-- Донат-секция -->
-        <section class="donate-section" id="donate">
+        </div>
+    </section>
+    
+    <!-- Server Info -->
+    <section class="server-stats">
+        <div class="container">
+            <div class="stats-content">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-text">
+                        <h3>Онлайн сервера</h3>
+                        <p><span id="server-online">142</span>/200 игроков</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div class="stat-text">
+                        <h3>Запущен</h3>
+                        <p>1 января 2023 года</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <i class="fas fa-sync-alt"></i>
+                    <div class="stat-text">
+                        <h3>Аптайм</h3>
+                        <p>99.8%</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <i class="fas fa-globe"></i>
+                    <div class="stat-text">
+                        <h3>Локация</h3>
+                        <p>Москва, Россия</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Donate Section -->
+    <section class="donate-section" id="donate">
+        <div class="container">
             <h2 class="section-title">ДОНАТ ПРИВИЛЕГИИ</h2>
             <div class="privileges">
                 <!-- Привилегия 1 -->
                 <div class="privilege-card">
+                    <div class="popular-tag">Популярно</div>
                     <div class="privilege-header">
-                        <h3>Новичок</h3>
+                        <h3><i class="fas fa-star"></i> Новичок</h3>
                     </div>
                     <ul class="price-list">
                         <li><span>2 недели</span><span>30 ₽</span></li>
@@ -88,13 +138,13 @@
                         <li><span>90 дней</span><span>180 ₽</span></li>
                         <li class="best-offer"><span>Навсегда</span><span>360 ₽</span></li>
                     </ul>
-                    <button class="btn">Купить</button>
+                    <button class="btn"><i class="fas fa-shopping-cart"></i> Купить</button>
                 </div>
                 
                 <!-- Привилегия 2 -->
                 <div class="privilege-card">
                     <div class="privilege-header">
-                        <h3>Игрок</h3>
+                        <h3><i class="fas fa-shield-alt"></i> Игрок</h3>
                     </div>
                     <ul class="price-list">
                         <li><span>2 недели</span><span>60 ₽</span></li>
@@ -103,13 +153,13 @@
                         <li><span>90 дней</span><span>360 ₽</span></li>
                         <li class="best-offer"><span>Навсегда</span><span>720 ₽</span></li>
                     </ul>
-                    <button class="btn">Купить</button>
+                    <button class="btn"><i class="fas fa-shopping-cart"></i> Купить</button>
                 </div>
                 
                 <!-- Привилегия 3 -->
                 <div class="privilege-card">
                     <div class="privilege-header">
-                        <h3>Ветеран</h3>
+                        <h3><i class="fas fa-medal"></i> Ветеран</h3>
                     </div>
                     <ul class="price-list">
                         <li><span>2 недели</span><span>90 ₽</span></li>
@@ -118,13 +168,13 @@
                         <li><span>90 дней</span><span>540 ₽</span></li>
                         <li class="best-offer"><span>Навсегда</span><span>1 080 ₽</span></li>
                     </ul>
-                    <button class="btn">Купить</button>
+                    <button class="btn"><i class="fas fa-shopping-cart"></i> Купить</button>
                 </div>
                 
                 <!-- Привилегия 4 -->
                 <div class="privilege-card">
                     <div class="privilege-header">
-                        <h3>Мастер</h3>
+                        <h3><i class="fas fa-crown"></i> Мастер</h3>
                     </div>
                     <ul class="price-list">
                         <li><span>2 недели</span><span>120 ₽</span></li>
@@ -133,13 +183,13 @@
                         <li><span>90 дней</span><span>720 ₽</span></li>
                         <li class="best-offer"><span>Навсегда</span><span>1 440 ₽</span></li>
                     </ul>
-                    <button class="btn">Купить</button>
+                    <button class="btn"><i class="fas fa-shopping-cart"></i> Купить</button>
                 </div>
                 
                 <!-- Привилегия 5 -->
                 <div class="privilege-card">
                     <div class="privilege-header">
-                        <h3>Лорд</h3>
+                        <h3><i class="fas fa-dragon"></i> Лорд</h3>
                     </div>
                     <ul class="price-list">
                         <li><span>2 недели</span><span>150 ₽</span></li>
@@ -148,13 +198,15 @@
                         <li><span>90 дней</span><span>900 ₽</span></li>
                         <li class="best-offer"><span>Навсегда</span><span>1 800 ₽</span></li>
                     </ul>
-                    <button class="btn">Купить</button>
+                    <button class="btn"><i class="fas fa-shopping-cart"></i> Купить</button>
                 </div>
             </div>
-        </section>
-        
-        <!-- Правила сервера -->
-        <section class="rules">
+        </div>
+    </section>
+    
+    <!-- Rules -->
+    <section class="container">
+        <div class="rules">
             <h2 class="section-title">ПРАВИЛА СЕРВЕРА</h2>
             <p>Для поддержания дружелюбной атмосферы все игроки обязаны соблюдать правила:</p>
             <ul>
@@ -163,49 +215,55 @@
                 <li>Гриферство и воровство караются баном</li>
                 <li>Запрещена реклама других серверов</li>
                 <li>Нельзя использовать баги игры в своих целях</li>
+                <li>Запрещено распространение личной информации</li>
+                <li>Нельзя злоупотреблять чатом и голосовым общением</li>
+                <li>Запрещено создание неприемлемых построек</li>
             </ul>
-            <p>Полный список правил доступен на нашем <a href="#" style="color: #4CAF50;">форуме</a>.</p>
-        </section>
+            <p>Полный список правил доступен на нашем <a href="#" style="color: #ff9800;"><i class="fas fa-external-link-alt"></i> форуме</a>.</p>
+        </div>
+    </section>
     
-    <!-- Подвал -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>О сервере</h3>
-                    <p>MineLord - Minecraft сервер с 2020 года. Мы предлагаем уникальный игровой опыт с модификациями, активным сообществом и регулярными обновлениями.</p>
+                    <p>MineCraft Realm - современный Minecraft сервер с уникальными рейдами и системой привилегий. Присоединяйтесь к нашему сообществу!</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                    </div>
                 </div>
                 
                 <div class="footer-section">
                     <h3>Ссылки</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Главная</a></li>
-                        <li><a href="#">Форум</a></li>
-                        <li><a href="#donate">Донат</a></li>
-                        <li><a href="#">Статистика</a></li>
-                        <li><a href="#">Помощь</a></li>
+                        <li><a href="#"><i class="fas fa-arrow-right"></i> Главная</a></li>
+                        <li><a href="#"><i class="fas fa-arrow-right"></i> Форум</a></li>
+                        <li><a href="#donate"><i class="fas fa-arrow-right"></i> Донат</a></li>
+                        <li><a href="#"><i class="fas fa-arrow-right"></i> Помощь</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
                     <h3>Контакты</h3>
-                    <p>Email: support@minelord.ru</p>
-                    <p>Discord: discord.gg/minelord</p>
-                    <div class="social-links">
-                        <a href="#">VK</a>
-                        <a href="#">TG</a>
-                        <a href="#">YT</a>
-                        <a href="#">DS</a>
-                    </div>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-envelope"></i> support@mcrealm.ru</a></li>
+                        <li><a href="#"><i class="fab fa-discord"></i> discord.gg/mcrealm</a></li>
+                        <li><a href="#"><i class="fas fa-globe"></i> mcrealm.ru</a></li>
+                    </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                &copy; 2023 MineLord Minecraft Server. Все права защищены.
+                &copy; 2023 MineCraft Realm Server. Все права защищены.
             </div>
         </div>
     </footer>
-    
+
     <script src="script.js"></script>
 </body>
 </html>
