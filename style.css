@@ -1,105 +1,373 @@
-/* Добавить в конец файла */
+/* Основные стили */
+:root {
+    --mc-green: #4CAF50;
+    --mc-dark-green: #388E3C;
+    --mc-darker: #1E1E1E;
+    --mc-gray: #2D2D2D;
+    --mc-light: #F5F5F5;
+}
 
-/* Стили для раздела доната */
-.donate-section {
-    padding: 80px 20px;
-    background: rgba(0, 0, 0, 0.7);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: url('https://minelord.ru/images/bg.png') center/cover fixed;
+    color: white;
     position: relative;
+    min-height: 100vh;
+    line-height: 1.6;
 }
 
-.donate-section h2 {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 15px;
-    color: #4caf50;
-    text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: -1;
 }
 
-.section-subtitle {
-    text-align: center;
-    font-size: 18px;
-    max-width: 600px;
-    margin: 0 auto 50px;
-    color: #e0e0e0;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.privileges-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    max-width: 1400px;
-    margin: 0 auto 60px;
+/* Шапка */
+header {
+    padding: 20px 0;
+    border-bottom: 3px solid var(--mc-green);
+    background: rgba(30, 30, 30, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.privilege-card {
-    background: rgba(30, 30, 50, 0.8);
-    border-radius: 15px;
-    padding: 25px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(76, 175, 80, 0.3);
-}
-
-.privilege-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-}
-
-.privilege-header {
+.header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    height: 60px;
+}
+
+.logo h1 {
+    font-size: 28px;
+    color: var(--mc-green);
+    text-shadow: 2px 2px 0 #000;
+}
+
+.server-ip {
+    background: var(--mc-darker);
+    padding: 10px 20px;
+    border: 2px solid var(--mc-green);
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.server-ip:hover {
+    background: var(--mc-green);
+    transform: scale(1.05);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+nav a:hover, nav a.active {
+    background: var(--mc-green);
+    border-color: #2E7D32;
+}
+
+/* Основной контент */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: url('https://minelord.ru/images/hero-bg.jpg') center/cover;
+    margin: 20px 0;
+    border-radius: 10px;
+    border: 3px solid var(--mc-green);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h2 {
+    font-size: 48px;
     margin-bottom: 20px;
+    color: var(--mc-green);
+    text-shadow: 3px 3px 0 #000;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--mc-green);
+    color: white;
+    padding: 15px 40px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.3s;
+    border: 2px solid #2E7D32;
+    text-transform: uppercase;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--mc-dark-green);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.btn-outline {
+    background: transparent;
+    border-color: var(--mc-green);
+}
+
+.btn-outline:hover {
+    background: rgba(76, 175, 80, 0.2);
+}
+
+/* Раздел "О сервере" */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 50px 0;
+}
+
+.feature-card {
+    background: rgba(40, 40, 40, 0.8);
+    border: 2px solid var(--mc-green);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.feature-card img {
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    color: var(--mc-green);
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Раздел с донатом */
+.donate-section {
+    background: rgba(30, 30, 30, 0.9);
+    padding: 60px 20px;
+    border-radius: 10px;
+    border: 3px solid var(--mc-green);
+    margin: 50px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: var(--mc-green);
+    text-shadow: 2px 2px 0 #000;
+}
+
+.privileges {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.privilege-card {
+    background: rgba(50, 50, 50, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    border: 2px solid #555;
+    transition: all 0.3s;
+}
+
+.privilege-card:hover {
+    border-color: var(--mc-green);
+    transform: scale(1.02);
+}
+
+.privilege-header {
+    text-align: center;
     padding-bottom: 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid var(--mc-green);
+    margin-bottom: 15px;
 }
 
 .privilege-header h3 {
-    font-size: 24px;
-    color: #4caf50;
-    margin: 0;
-}
-
-.popular-tag, .vip-tag {
-    background: #ff7bac;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 22px;
+    color: var(--mc-green);
     text-transform: uppercase;
 }
 
-.vip-tag {
-    background: linear-gradient(45deg, #ff9800, #ff5722);
-}
-
-.privilege-prices {
+.price-list {
     list-style: none;
-    padding: 0;
-    margin: 0 0 25px 0;
+    margin-bottom: 20px;
 }
 
-.privilege-prices li {
+.price-list li {
     display: flex;
     justify-content: space-between;
-    padding: 12px 0;
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    padding: 10px 0;
+    border-bottom: 1px dashed #555;
 }
 
-.privilege-prices li:last-child {
+.price-list li:last-child {
     border-bottom: none;
 }
 
-.privilege-prices li span:first-child {
-    color: #bdbdbd;
-}
-
-.privilege-prices li span:last-child {
+.best-offer {
+    color: gold;
     font-weight: bold;
-    color: #fff;
 }
 
-.best-offer span:last-child
+/* Раздел с правилами */
+.rules {
+    background: rgba(40, 40, 40, 0.8);
+    padding: 40px;
+    border-radius: 10px;
+    border: 2px solid var(--mc-green);
+    margin: 50px 0;
+}
+
+.rules ul {
+    padding-left: 20px;
+    margin: 20px 0;
+}
+
+.rules li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Раздел с картой */
+.map-section {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.map-placeholder {
+    height: 500px;
+    background: #222;
+    border: 3px solid var(--mc-green);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+/* Подвал */
+footer {
+    background: rgba(30, 30, 30, 0.95);
+    padding: 40px 0 20px;
+    border-top: 3px solid var(--mc-green);
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-section h3 {
+    color: var(--mc-green);
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links a {
+    color: #aaa;
+    text-decoration: none;
+    display: block;
+    padding: 8px 0;
+    transition: all 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--mc-green);
+    padding-left: 5px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 
