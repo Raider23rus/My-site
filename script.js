@@ -1,27 +1,36 @@
-// Массив с альтернативными текстами
-const texts = [
-    "Приветствуем вас на нашем сайте!",
-    "Здесь вы найдёте много интересного",
-    "Мы рады вашему визиту",
-    "Спасибо, что заглянули к нам"
-];
-
-// Функция для изменения текста
-function changeText() {
-    const randomIndex = Math.floor(Math.random() * texts.length);
-    document.querySelector('p').textContent = texts[randomIndex];
+document.addEventListener('DOMContentLoaded', function() {
+    // Анимация счетчика посетителей
+    const counter = document.getElementById('visitorCount');
+    let count = 0;
+    const targetCount = 1284;
     
-    // Анимация изменения текста
-    const p = document.querySelector('p');
-    p.style.animation = 'none';
-    void p.offsetWidth; // Триггер перезапуска анимации
-    p.style.animation = 'fadeIn 1s';
-}
+    const interval = setInterval(() => {
+        count += 7;
+        if (count >= targetCount) {
+            count = targetCount;
+            clearInterval(interval);
+        }
+        counter.textContent = count;
+    }, 20);
 
-// Добавляем обработчик события для кнопки
-document.getElementById('changeTextBtn').addEventListener('click', changeText);
+    // Эффект при наведении на кнопки навигации
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.1)';
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
+    });
 
-// Инициализация при загрузке страницы
-window.onload = function() {
-    console.log('Сайт успешно загружен!');
-};
+    // Изменение цвета тени заголовка
+    const heading = document.querySelector('h1');
+    let hue = 0;
+    
+    setInterval(() => {
+        hue = (hue + 1) % 360;
+        heading.style.textShadow = `0 0 15px hsl(${hue}, 100%, 70%)`;
+    }, 50);
+});
