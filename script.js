@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Копирование IP-адреса
     window.copyIP = function() {
-        const ip = 'play.mcrealm.ru';
+        const ip = 'mc.ladexmine.ru';
         navigator.clipboard.writeText(ip)
             .then(() => {
                 const serverIpElement = document.querySelector('.server-ip');
