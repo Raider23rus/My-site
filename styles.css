@@ -1,29 +1,102 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Элементы DOM
-    const changeThemeBtn = document.getElementById('changeThemeBtn');
-    const animateTextBtn = document.getElementById('animateTextBtn');
-    const content = document.querySelector('.content');
-    const heading = document.querySelector('h1');
-    const paragraph = document.querySelector('p');
+/* Общие стили */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('https://d2ey8kgez2ia5f.cloudfront.net/wp-content/uploads/2019/08/63833118_p0-1.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #fff;
+    min-height: 100vh;
+    position: relative;
+}
 
-    // Смена темы
-    changeThemeBtn.addEventListener('click', function() {
-        content.classList.toggle('dark-theme');
-        this.textContent = content.classList.contains('dark-theme') 
-            ? 'Светлая тема' 
-            : 'Тёмная тема';
-    });
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
 
-    // Анимация текста
-    animateTextBtn.addEventListener('click', function() {
-        heading.classList.toggle('text-animation');
-        paragraph.classList.toggle('text-animation');
-        
-        this.textContent = heading.classList.contains('text-animation') 
-            ? 'Остановить анимацию' 
-            : 'Анимация текста';
-    });
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
-    // Консоль-приветствие
-    console.log('%cДобро пожаловать на сайт!', 'color: #ff6b6b; font-size: 16px;');
-});
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ff7bac;
+    text-shadow: 0 0 10px rgba(255, 123, 172, 0.7);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background: rgba(255, 123, 172, 0.3);
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle {
+    font-size: 22px;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    color: #e0e0e0;
+}
+
+.btn {
+    display: inline-block;
+    background: #ff7bac;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s;
+    border: 2px solid transparent;
+}
+
+.btn:hover {
+    background: transparent;
+    border-color: #ff7bac;
+    transform: translateY
