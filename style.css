@@ -370,4 +370,109 @@ footer {
 
 .social-links a {
     display: inline-block;
-    width: 
+    width: 40px;
+    height: 40px;
+    background: #333;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    transition: all 0.3s;
+    color: white;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    background: var(--mc-green);
+    transform: translateY(-5px);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    color: #777;
+}
+
+/* Мобильное меню */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 3px 0;
+    border-radius: 2px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    nav ul {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+    
+    nav ul.active {
+        display: flex;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .server-ip {
+        margin-top: 15px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .hero h2 {
+        font-size: 36px;
+    }
+    
+    .hero p {
+        font-size: 18px;
+    }
+    
+    .hero {
+        padding: 50px 20px;
+    }
+    
+    .features, .privileges {
+        grid-template-columns: 1fr;
+    }
+    
+    .map-placeholder {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 28px;
+    }
+    
+    .btn {
+        display: block;
+        margin: 10px auto;
+        width: 90%;
+    }
+    
+    .donate-section {
+        padding: 30px 15px;
+    }
+    
+    .rules {
+        padding: 20px;
+    }
+}
