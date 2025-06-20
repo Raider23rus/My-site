@@ -76,13 +76,6 @@ h1 {
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.subtitle {
-    font-size: 22px;
-    max-width: 700px;
-    margin: 0 auto 40px;
-    color: #e0e0e0;
-}
-
 .btn {
     display: inline-block;
     background: #ff7bac;
