@@ -1,9 +1,3 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Анимация счетчика посетителей
-    const counter = document.getElementById('visitorCount');
-    let count = 0;
-    const targetCount = 1284;
-    
     const interval = setInterval(() => {
         count += 7;
         if (count >= targetCount) {
