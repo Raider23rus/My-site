@@ -1,155 +1,105 @@
-/* Общие стили */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url('https://d2ey8kgez2ia5f.cloudfront.net/wp-content/uploads/2019/08/63833118_p0-1.png');
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    color: #fff;
-    min-height: 100vh;
+/* Добавить в конец файла */
+
+/* Стили для раздела доната */
+.donate-section {
+    padding: 80px 20px;
+    background: rgba(0, 0, 0, 0.7);
     position: relative;
 }
 
-body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: -1;
+.donate-section h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: #4caf50;
+    text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+.section-subtitle {
+    text-align: center;
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 50px;
+    color: #e0e0e0;
 }
 
-header {
+.privileges-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto 60px;
+}
+
+.privilege-card {
+    background: rgba(30, 30, 50, 0.8);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.privilege-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.privilege-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.logo {
-    font-size: 28px;
-    font-weight: bold;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 25px;
-    margin: 0;
-    padding: 0;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    transition: 0.3s;
-    padding: 8px 15px;
-    border-radius: 5px;
-}
-
-nav a:hover {
-    background: rgba(255, 123, 172, 0.3);
-}
-
-.hero {
-    text-align: center;
-    padding: 100px 20px;
-}
-
-h1 {
-    font-size: 48px;
     margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.btn {
-    display: inline-block;
+.privilege-header h3 {
+    font-size: 24px;
+    color: #4caf50;
+    margin: 0;
+}
+
+.popular-tag, .vip-tag {
     background: #ff7bac;
     color: white;
-    padding: 15px 40px;
-    border-radius: 30px;
-    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
     font-weight: bold;
-    font-size: 18px;
-    transition: 0.3s;
-    border: 2px solid transparent;
+    text-transform: uppercase;
 }
 
-.btn:hover {
-    background: transparent;
-    border-color: #ff7bac;
-    transform: translateY(-5px);
+.vip-tag {
+    background: linear-gradient(45deg, #ff9800, #ff5722);
 }
 
-.features {
+.privilege-prices {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0;
+}
+
+.privilege-prices li {
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 80px 20px;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
 }
 
-.feature-card {
-    background: rgba(30, 30, 50, 0.7);
-    border-radius: 15px;
-    padding: 30px;
-    width: 250px;
-    text-align: center;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 123, 172, 0.3);
+.privilege-prices li:last-child {
+    border-bottom: none;
 }
 
-.feature-card h3 {
-    color: #ff7bac;
-    font-size: 24px;
+.privilege-prices li span:first-child {
+    color: #bdbdbd;
 }
 
-footer {
-    text-align: center;
-    padding: 30px;
-    margin-top: 50px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.counter {
-    font-size: 24px;
-    margin: 30px 0;
-    color: #ff7bac;
+.privilege-prices li span:last-child {
     font-weight: bold;
+    color: #fff;
 }
 
-/* Адаптивность */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .hero {
-        padding: 60px 20px;
-    }
-
-    h1 {
-        font-size: 36px;
-    }
-
-    .subtitle {
-        font-size: 18px;
-    }
-}
+.best-offer span:last-child
