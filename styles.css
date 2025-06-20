@@ -99,4 +99,67 @@ h1 {
 .btn:hover {
     background: transparent;
     border-color: #ff7bac;
-    transform: translateY
+    transform: translateY(-5px);
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 80px 20px;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    background: rgba(30, 30, 50, 0.7);
+    border-radius: 15px;
+    padding: 30px;
+    width: 250px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 123, 172, 0.3);
+}
+
+.feature-card h3 {
+    color: #ff7bac;
+    font-size: 24px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.counter {
+    font-size: 24px;
+    margin: 30px 0;
+    color: #ff7bac;
+    font-weight: bold;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+}
