@@ -1,7 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  background-image: url("https://d2ey8kgez2ia5f.cloudfront.net/wp-content/uploads/2019/08/63833118_p0-1.png"); /*  Абсолютный URL */
-  /* или
-  background-image: url("/images/background.jpg");  Относительный URL, если картинка в папке images */
-  background-repeat: no-repeat; /*  Чтобы картинка не повторялась */
-  background-size: cover; /* Чтобы картинка покрывала весь фон */
+    background-image: url('https://d2ey8kgez2ia5f.cloudfront.net/wp-content/uploads/2019/hero-img.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
 }
