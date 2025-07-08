@@ -7,7 +7,7 @@ my-site/
 │   │   └── libs/
 │   └── images/  
 │       ├── logo.png  
-│       └── background.jpg
+│       └── background.jpg   
 ├── index.html  
 ├── about.html  
 └── 404.html  
